@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    image: smarthome
+    ports:
+      - 80:80
+    working_dir: /app
+    volumes:
+      - database-volume:/database
+    environment:
+      DEBUG: False
+
+volumes:
+  database-volume:

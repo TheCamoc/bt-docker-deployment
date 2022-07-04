@@ -7,18 +7,15 @@ ENV GUNICORN_CMD_ARGS="--bind=0.0.0.0"
 ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /app
-COPY requirements.txt requirements.txt
+COPY bt-smarthome-server/requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
-COPY smarthome .
+COPY bt-smarthome-server/smarthome .
 
 RUN python manage.py collectstatic --noinput
 
 COPY nginx.conf /etc/nginx/nginx.conf
 RUN apt update && apt install nginx -y -o Dpkg::Options::=--force-confdef
 
-# RUN python manage.py migrate
-# RUN python manage.py makemigrations
-# RUN python manage.py migrate
 COPY start.sh start.sh
 RUN chmod +x start.sh
 
