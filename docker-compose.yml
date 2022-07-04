@@ -6,6 +6,7 @@ services:
     ports:
       - 80:80
       - 443:443
+      - 1883:1883
     working_dir: /app
     volumes:
       - database-volume:/database

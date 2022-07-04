@@ -18,10 +18,11 @@ else
   echo 'Creating new Admin user in new Database.'
   python manage.py makemigrations
   python manage.py migrate
-  export DJANGO_SUPERUSER_PASSWORD="admin"
+  export DJANGO_SUPERUSER_PASSWORD="kV9lkxVVwYi(Msf;(x9U"
   python manage.py createsuperuser --username admin --email admin@example.com --noinput
   unset DJANGO_SUPERUSER_PASSWORD
 fi
 
 service nginx start
+service mosquitto start
 gunicorn smarthome.wsgi:application

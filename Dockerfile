@@ -12,9 +12,10 @@ RUN pip3 install -r requirements.txt
 COPY bt-smarthome-server/smarthome .
 
 RUN python manage.py collectstatic --noinput
+COPY bt-smarthome-frontend/dist/bt-smarthome-frontend /frontend
 
 COPY nginx.conf /etc/nginx/nginx.conf
-RUN apt update && apt install nginx -y -o Dpkg::Options::=--force-confdef
+RUN apt update && apt install nginx -y -o Dpkg::Options::=--force-confdef && apt install mosquitto -y -o Dpkg::Options::=--force-confdef
 
 COPY start.sh start.sh
 RUN chmod +x start.sh
