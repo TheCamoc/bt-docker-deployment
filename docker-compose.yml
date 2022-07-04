@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   app:
-    image: smarthome
+    image: ghcr.io/thecamoc/smarthome
     ports:
       - 80:80
       - 443:443
