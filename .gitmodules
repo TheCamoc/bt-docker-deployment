@@ -1,0 +1,6 @@
+[submodule "bt-smarthome-server"]
+	path = bt-smarthome-server
+	url = https://github.com/TheCamoc/bt-smarthome-server
+[submodule "bt-smarthome-frontend"]
+	path = bt-smarthome-frontend
+	url = https://github.com/TheCamoc/bt-smarthome-frontend
