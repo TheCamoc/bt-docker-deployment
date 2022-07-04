@@ -5,11 +5,15 @@ services:
     image: smarthome
     ports:
       - 80:80
+      - 443:443
     working_dir: /app
     volumes:
       - database-volume:/database
+      - ./RSA-privkey.pem:/app/RSA-privkey.pem
+      - ./RSA-cert.pem:/app/RSA-cert.pem
     environment:
       DEBUG: False
+      NGINX_HOST: "localhost"
 
 volumes:
   database-volume:
