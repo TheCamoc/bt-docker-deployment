@@ -37,6 +37,16 @@ jobs:
           token: ${{ secrets.CI_TOKEN }}
           submodules: true
 
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.3.0
+
+      - name: Build Angular Application
+        run: |
+          cd bt-smarthome-frontend
+          npm install
+          ng build
+          cd ..
+
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
       - name: Install cosign
