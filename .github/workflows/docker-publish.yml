@@ -44,6 +44,7 @@ jobs:
         run: |
           cd bt-smarthome-frontend
           npm install
+          npm install -g @angular/cli
           ng build
           cd ..
 
